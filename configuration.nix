@@ -61,6 +61,11 @@
     variant = "";
   };
 
+  # Configure hash in X11.
+  programs.bash.interactiveShellInit = ''
+      set -h
+    '';
+
   # Configuración de bajo nivel para el servidor gráfico Xorg.
     services.xserver.extraConfig = ''
       # 1. El monitor principal: HDMI-1 (encendido y primario).
@@ -142,8 +147,9 @@
      pkgs.vlc
      pkgs.powershell
      pkgs.wineWowPackages.stable
-     winetricks
-     corefonts
+     pkgs.winetricks
+     pkgs.corefonts
+     pkgs.podman
      #vim #The Nano editor is also installed by default.
   ];
 
