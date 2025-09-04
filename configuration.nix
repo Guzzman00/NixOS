@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-
+    
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
@@ -145,6 +145,8 @@
      pkgs.jetbrains-toolbox
      pkgs.git
      pkgs.vlc
+     pkgs.caligula
+     pkgs.obs-studio
      pkgs.powershell
      pkgs.wineWowPackages.stable
      pkgs.winetricks
@@ -152,7 +154,15 @@
      pkgs.podman
      #vim #The Nano editor is also installed by default.
   ];
-
+  
+  # Packages Configurations.
+  
+  # JetBrains Toolbox.
+      environment.sessionVariables = {
+        PATH = "$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH";
+      };
+  
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

@@ -21,11 +21,11 @@ let
       '';
     };
     
-    # Pin para Java (Zulu17, Temurin8, Zulu8, Zulu11, Zulu21)
+    # Pin para Miscelanea (Zulu17, Temurin8, Zulu8, Zulu11, Zulu21, Bash, Steam-run)
     pkgs = import (builtins.fetchTarball {
       url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-2.05.tar.gz";
       sha256 = "0zydsqiaz8qi4zd63zsb2gij2p614cgkcaisnk11wjy3nmiq0x1s";
-    }) {};
+    }) {config.allowUnfree = true;};
   
     # Pin para Cargo 1.85.0
     pkgs_cargo = import (builtins.fetchTarball {
@@ -61,6 +61,8 @@ in
 # El bloque 0 define el entorno base
 pkgs.mkShell {
   buildInputs = [
+    pkgs.steam-run
+    pkgs.bash
     scala_2_13_8
     pkgs.zulu17
     pkgs_cargo.cargo
@@ -73,7 +75,7 @@ pkgs.mkShell {
   shellHook = ''
     echo "--- Entorno-Base Activado ---"
     export JAVA_HOME=${pkgs.zulu17}
-    export PATH=$JAVA_HOME/bin:$PATH
+    export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$JAVA_HOME/bin:$PATH"
   '';
 
 } // {
@@ -81,6 +83,8 @@ pkgs.mkShell {
 # El bloque 1 define el entorno-1
 entorno-1 = pkgs.mkShell {
   buildInputs = [
+    pkgs.steam-run
+    pkgs.bash
     pkgs."temurin-bin-8"
     pkgs.zulu8
     pkgs.zulu11
@@ -96,6 +100,7 @@ entorno-1 = pkgs.mkShell {
     export ZULU11_HOME=${pkgs.zulu11}
     export JDK15_HOME=${pkgs_jdk15.jdk15}
     export ZULU24_HOME=${pkgs_zulu24.zulu24}
+    export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$JAVA_HOME/bin:$PATH"
   '';
     
   };
