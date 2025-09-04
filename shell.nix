@@ -100,6 +100,7 @@ entorno-1 = pkgs.mkShell {
     export ZULU11_HOME=${pkgs.zulu11}
     export JDK15_HOME=${pkgs_jdk15.jdk15}
     export ZULU24_HOME=${pkgs_zulu24.zulu24}
+    export JAVA_HOME=${pkgs_jdk15.jdk15}
     export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$JAVA_HOME/bin:$PATH"
   '';
     
