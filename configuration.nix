@@ -135,6 +135,7 @@
      pkgs.neofetch
      pkgs.btop
      pkgs.wget
+     pkgs.corefonts
      pkgs.micro
      pkgs.xpad
      pkgs.ark
@@ -148,11 +149,9 @@
      pkgs.caligula
      pkgs.obs-studio
      pkgs.powershell
-     pkgs.wineWowPackages.stable
-     pkgs.winetricks
-     pkgs.corefonts
+     pkgs.bottles
      pkgs.podman
-     #vim #The Nano editor is also installed by default.
+     #vim #The Micro editor is also installed by default.
   ];
   
   # Packages Configurations.
