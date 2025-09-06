@@ -149,12 +149,10 @@
      pkgs.jetbrains-toolbox
      pkgs.onlyoffice-bin
      pkgs.git
-     pkgs.foliate
      pkgs.handbrake
      pkgs.obs-studio
      pkgs.vlc
      pkgs.caligula
-     pkgs.steam
      pkgs.podman
      #vim #The Micro editor is also installed by default.
   ];
