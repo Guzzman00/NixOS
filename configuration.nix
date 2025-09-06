@@ -66,6 +66,13 @@
       set -h
     '';
 
+  # Enable 3D graphics support.
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true; 
+  };
+
   # Configuración de bajo nivel para el servidor gráfico Xorg.
     services.xserver.extraConfig = ''
       # 1. El monitor principal: HDMI-1 (encendido y primario).
