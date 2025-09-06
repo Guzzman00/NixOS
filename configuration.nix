@@ -152,6 +152,7 @@
      pkgs.handbrake
      pkgs.obs-studio
      pkgs.vlc
+     pkgs.krita
      pkgs.caligula
      pkgs.podman
      #vim #The Micro editor is also installed by default.
