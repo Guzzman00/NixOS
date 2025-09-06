@@ -126,6 +126,9 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Install Steam.
+  programs.steam.enable = true;
+
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
@@ -144,12 +147,14 @@
      pkgs.thunderbird
      pkgs.discord
      pkgs.jetbrains-toolbox
+     pkgs.onlyoffice-bin
      pkgs.git
+     pkgs.foliate
+     pkgs.handbrake
+     pkgs.obs-studio
      pkgs.vlc
      pkgs.caligula
-     pkgs.obs-studio
-     pkgs.powershell
-     pkgs.bottles
+     pkgs.steam
      pkgs.podman
      #vim #The Micro editor is also installed by default.
   ];
