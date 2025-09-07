@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <nixos-hardware/lenovo/thinkpad/t430>
     ];
     
   # Bootloader.
@@ -133,6 +134,10 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Install Steam.
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
@@ -158,6 +163,7 @@
      pkgs.vlc
      pkgs.krita
      pkgs.caligula
+     pkgs.mangohud
      pkgs.podman
      #vim #The Micro editor is also installed by default.
   ];
