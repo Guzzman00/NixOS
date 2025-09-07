@@ -125,7 +125,7 @@
   users.users.guzmen = {
     isNormalUser = true;
     description = "guzmen";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -137,6 +137,7 @@
   # Install Steam.
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true;
 
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
@@ -163,18 +164,19 @@
      pkgs.vlc
      pkgs.krita
      pkgs.caligula
+     pkgs.protonup-qt
      pkgs.mangohud
      pkgs.podman
      #vim #The Micro editor is also installed by default.
   ];
   
   # Packages Configurations.
-  
-  # JetBrains Toolbox.
       environment.sessionVariables = {
+      # JetBrains Toolbox.
         PATH = "$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH";
+      # Proton Glorious Eggroll.
+        STEAM_EXTRA_COMPAT_TOOLS_PATHS = "$HOME/.steam/root/compatibilitytools.d";
       };
-  
   
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
