@@ -68,22 +68,13 @@
     '';
 
   # Enable 3D graphics support.
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true; 
+  hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
   };
-
-  # Load OpenGL and Vulkan drivers for Intel.
-    hardware.opengl.extraPackages = with pkgs; [
-      intel-media-driver # Driver de video para Intel (recomendado)
-      vulkan-loader
-      vulkan-tools
-      vulkan-validation-layers
-    ];
   
-    # Optional: For older Intel GPUs, using the "modesetting" driver is often best.
-    services.xserver.videoDrivers = [ "modesetting" ];
+  # Optional: For older Intel GPUs, using the "modesetting" driver is often best.
+  services.xserver.videoDrivers = [ "modesetting" ];
 
   # Configuración de bajo nivel para el servidor gráfico Xorg.
     services.xserver.extraConfig = ''
@@ -177,6 +168,11 @@
      pkgs.caligula
      pkgs.protonup-qt
      pkgs.mangohud
+     pkgs.intel-media-driver
+     pkgs.vaapiIntel
+     pkgs.intel-gpu-tools
+     pkgs.vulkan-loader
+     pkgs.vulkan-tools
      pkgs.podman
      #vim #The Micro editor is also installed by default.
   ];
