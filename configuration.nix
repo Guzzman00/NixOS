@@ -100,8 +100,6 @@
 
   # Configure HDMI-1.
   services.xserver.displayManager.sessionCommands = ''
-    # Usamos la ruta completa al paquete xrandr, como es requerido en NixOS
-    # y esperamos 2 segundos para asegurar que el escritorio esté listo.
     sleep 2 && ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --set "Broadcast RGB" "Full"
   '';
 
@@ -134,7 +132,7 @@
   users.users.guzmen = {
     isNormalUser = true;
     description = "guzmen";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "libvirtd" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -147,6 +145,9 @@
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
+
+  # Allow virtualization.
+  virtualisation.libvirtd.enable = true;
 
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
@@ -165,6 +166,7 @@
      pkgs.google-chrome
      pkgs.thunderbird
      pkgs.discord
+     pkgs.gnome.gnome-boxes
      pkgs.jetbrains-toolbox
      pkgs.onlyoffice-bin
      pkgs.git
