@@ -83,6 +83,7 @@
           Identifier "HDMI-1"  
           Option "Primary" "true"
           Option "Enable" "true"
+          Option "Broadcast RGB" "Full"
       EndSection
     
       # 2. El monitor secundario: VGA-1 (apagado).
