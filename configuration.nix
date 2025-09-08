@@ -83,7 +83,6 @@
           Identifier "HDMI-1"  
           Option "Primary" "true"
           Option "Enable" "true"
-          Option "Broadcast RGB" "Full"
       EndSection
     
       # 2. El monitor secundario: VGA-1 (apagado).
@@ -98,6 +97,13 @@
           Option "Enable" "false"
       EndSection
     '';
+
+  # Configure HDMI-1.
+  services.xserver.displayManager.sessionCommands = ''
+    # Usamos la ruta completa al paquete xrandr, como es requerido en NixOS
+    # y esperamos 2 segundos para asegurar que el escritorio esté listo.
+    sleep 2 && ${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --set "Broadcast RGB" "Full"
+  '';
 
   # Configure console keymap.
   console.keyMap = "es";
