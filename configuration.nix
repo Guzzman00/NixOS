@@ -77,7 +77,7 @@
   services.xserver.videoDrivers = [ "modesetting" ];
 
   # Configuración de bajo nivel para el servidor gráfico Xorg.
-    services.xserver.extraConfig = ''
+  services.xserver.extraConfig = ''
       # 1. El monitor principal: HDMI-1 (encendido y primario).
       Section "Monitor"
           Identifier "HDMI-1"  
@@ -169,20 +169,19 @@
      pkgs.protonup-qt
      pkgs.mangohud
      pkgs.intel-media-driver
-     pkgs.vaapiIntel
-     pkgs.intel-gpu-tools
-     pkgs.vulkan-loader
-     pkgs.vulkan-tools
+     pkgs.mesa.drivers
      pkgs.podman
      #vim #The Micro editor is also installed by default.
   ];
   
   # Packages Configurations.
-      environment.sessionVariables = {
+  environment.sessionVariables = {
       # JetBrains Toolbox.
         PATH = "$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH";
       # Proton Glorious Eggroll.
         STEAM_EXTRA_COMPAT_TOOLS_PATHS = "$HOME/.steam/root/compatibilitytools.d";
+      # Vulkan.
+        VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/intel_icd.x86_64.json";
       };
   
   # Some programs need SUID wrappers, can be configured further or are
