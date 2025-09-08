@@ -180,8 +180,6 @@
         PATH = "$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH";
       # Proton Glorious Eggroll.
         STEAM_EXTRA_COMPAT_TOOLS_PATHS = "$HOME/.steam/root/compatibilitytools.d";
-      # Vulkan.
-        VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/intel_icd.x86_64.json";
       };
   
   # Some programs need SUID wrappers, can be configured further or are
