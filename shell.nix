@@ -23,7 +23,7 @@ let
     
     # Pin para Miscelanea (Zulu17, Temurin8, Zulu8, Zulu11, Zulu21, Bash, Steam-run)
     pkgs = import (builtins.fetchTarball {
-      url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-2.05.tar.gz";
+      url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-24.05.tar.gz";
       sha256 = "0zydsqiaz8qi4zd63zsb2gij2p614cgkcaisnk11wjy3nmiq0x1s";
     }) {config.allowUnfree = true;};
   
@@ -45,7 +45,7 @@ let
       sha256 = "0qg99zj0gb0pc6sjlkmwhk1c1xz14qxmk6gamgfmcxpsfdp5vn72";
     }) {};
   
-    # Pin para JDK15
+    # Pin para JRK15
     pkgs_jdk15 = import (builtins.fetchTarball {
       url = "https://github.com/NixOS/nixpkgs/archive/dce8fc727dc2891628e4f878bb18af643b7b255d.tar.gz";
       sha256 = "01c300hi7gfia0548xqm07995vzp6g3k171vyk2bnvh2jm1s0q5p"; 
@@ -99,6 +99,7 @@ entorno-1 = pkgs.mkShell {
     export ZULU8_HOME=${pkgs.zulu8}
     export ZULU11_HOME=${pkgs.zulu11}
     export JDK15_HOME=${pkgs_jdk15.jdk15}
+    export ZULU21_HOME=${pkgs.zulu21}
     export ZULU24_HOME=${pkgs_zulu24.zulu24}
     export JAVA_HOME=${pkgs_jdk15.jdk15}
     export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$JAVA_HOME/bin:$PATH"
