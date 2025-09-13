@@ -74,6 +74,11 @@ pkgs.mkShell {
 
   shellHook = ''
     echo "--- Entorno-Base Activado ---"
+    export SCALA_HOME=${scala_2_13_8}
+    export ZULU17_HOME=${pkgs.zulu17}
+    export CARGO_HOME=${pkgs_cargo.cargo}
+    export NODE_HOME=${pkgs_nodejs.nodejs}
+    export DENO_HOME=${pkgs_deno.deno}
     export JAVA_HOME=${pkgs.zulu17}
     export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$JAVA_HOME/bin:$PATH"
   '';
