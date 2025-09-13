@@ -45,7 +45,7 @@ let
       sha256 = "0qg99zj0gb0pc6sjlkmwhk1c1xz14qxmk6gamgfmcxpsfdp5vn72";
     }) {};
   
-    # Pin para JRK15
+    # Pin para JRE15
     pkgs_jdk15 = import (builtins.fetchTarball {
       url = "https://github.com/NixOS/nixpkgs/archive/dce8fc727dc2891628e4f878bb18af643b7b255d.tar.gz";
       sha256 = "01c300hi7gfia0548xqm07995vzp6g3k171vyk2bnvh2jm1s0q5p"; 
