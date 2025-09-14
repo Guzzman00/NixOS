@@ -70,6 +70,7 @@ pkgs.mkShell {
     pkgs_deno.deno
     pkgs.sbt
     pkgs.maven
+    pkgs.gcc
   ];
 
   shellHook = ''
