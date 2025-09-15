@@ -1,0 +1,51 @@
+DELL 1708FP (HDMI-1)
+
+EPI2442 (VGA-1)
+
+variables de entorno para hacer un nuevo proyecto en RustRover:
+variable:RUSTFLAGS
+valor:-C linker=/nix/store/rdc1jnyw74mwr2gszqc5zwi433zxs089-gcc-wrapper-13.2.0/bin/cc
+
+
+nix-env -q
+
+
+cd /etc/nixos
+sudo micro configuration.nix
+
+flatpak remotes
+
+sudo nix-channel --list
+
+sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +3 && sudo nix-collect-garbage
+sudo nixos-rebuild switch
+
+
+cd accesorios_programacion
+sudo micro shell.nix
+
+nix-shell
+java --version (JDK 17)
+echo $ZULU17_HOME
+scala --version (2.13.8)
+echo $SCALA_HOME
+cargo --version (1.85.0)
+echo $CARGO_HOME
+node --version (22.14.0)
+echo $NODE_HOME
+deno --version (2.2.3)
+echo $DENO_HOME
+
+nix-shell -A entorno-1
+java --version (JRE 15)
+echo $JDK15_HOME
+$TEMURIN8_HOME/bin/java -version (JDK 8)
+echo $TEMURIN8_HOME
+$ZULU8_HOME/bin/java -version (JDK 8)
+echo $ZULU8_HOME
+$ZULU11_HOME/bin/java -version (JDK 11)
+echo $ZULU11_HOME
+$ZULU21_HOME/bin/java -version (JDK 21)
+echo $ZULU21_HOME
+$ZULU24_HOME/bin/java -version (JDK 24)
+echo $ZULU24_HOME
