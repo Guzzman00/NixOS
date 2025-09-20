@@ -177,6 +177,7 @@
      pkgs.obs-studio
      pkgs.vlc
      pkgs.krita
+     pkgs.ffmpeg
      pkgs.caligula
      pkgs.protonup-qt
      pkgs.libstrangle
