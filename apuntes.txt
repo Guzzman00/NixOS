@@ -11,6 +11,7 @@ manage>
 properties>
 general>
 comando para forzar a Proton a traducir los gráficos de DirectX a OpenGL:PROTON_USE_WINED3D=1 %command%
+comando para forzar a Proton a traducir los gráficos de DirectX a OpenGL + MangoHud:PROTON_USE_WINED3D=1 mangohud %command%
 
 
 nix-env -q
