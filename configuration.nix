@@ -145,9 +145,6 @@
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
-
-  # Allow MangoHud.
-  boot.kernel.sysctl."kernel.perf_event_paranoid" = 1;
   
   # Allow virtualization.
   virtualisation.libvirtd.enable = true;
@@ -182,8 +179,7 @@
      pkgs.krita
      pkgs.caligula
      pkgs.protonup-qt
-     pkgs.mangohud
-     pkgsi686Linux.mangohud
+     pkgs.libstrangle
      pkgs.intel-gpu-tools
      pkgs.intel-vaapi-driver
      pkgs.mesa.drivers
