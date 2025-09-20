@@ -152,6 +152,9 @@
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
+  # Allow energy demon.
+  services.power-profiles-daemon.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget.
   environment.systemPackages = with pkgs; [
@@ -177,7 +180,7 @@
      pkgs.caligula
      pkgs.protonup-qt
      pkgs.mangohud
-     pkgs.intel-media-driver
+     pkgs.intel-vaapi-driver
      pkgs.mesa.drivers
      pkgs.podman
      #vim #The Micro editor is also installed by default.
