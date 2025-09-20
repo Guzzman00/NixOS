@@ -6,6 +6,12 @@ variables de entorno para hacer un nuevo proyecto en RustRover:
 variable:RUSTFLAGS
 valor:-C linker=/nix/store/rdc1jnyw74mwr2gszqc5zwi433zxs089-gcc-wrapper-13.2.0/bin/cc
 
+en Steam para lanzar juegos:
+manage>
+properties>
+general>
+comando para forzar a Proton a traducir los gráficos de DirectX a OpenGL:PROTON_USE_WINED3D=1 %command%
+
 
 nix-env -q
 
