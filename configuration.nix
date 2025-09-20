@@ -146,6 +146,14 @@
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
 
+  # Allow MangoHud thanks to Intel GPU Top.
+  security.wrappers.intel-gpu-top-cap = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_perfmon+ep";
+    source = "${pkgs.intel-gpu-tools}/bin/intel_gpu_top";
+  };
+
   # Allow virtualization.
   virtualisation.libvirtd.enable = true;
 
