@@ -10,9 +10,11 @@ en Steam para lanzar juegos:
 administrar>
 propiedades>
 general>
-comando para forzar a Proton a traducir los gráficos de DirectX a OpenGL:PROTON_USE_WINED3D=1 %command%
-comando para forzar a Proton a traducir los gráficos de DirectX a OpenGL + MangoHud:PROTON_USE_WINED3D=1 mangohud %command%
+comando de OpenGL:PROTON_USE_WINED3D=1 %command%
+comando de OpenGL + Strangle:PROTON_USE_WINED3D=1 strangle 60 %command%
 
+
+sysctl kernel.perf_event_paranoid
 
 nix-env -q
 
