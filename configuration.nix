@@ -181,6 +181,7 @@
      pkgs.protonup-qt
      pkgs.mangohud
      pkgsi686Linux.mangohud
+     pkgs.intel-gpu-tools
      pkgs.intel-vaapi-driver
      pkgs.mesa.drivers
      pkgs.podman
