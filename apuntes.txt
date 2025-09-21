@@ -18,14 +18,13 @@ sysctl kernel.perf_event_paranoid
 
 nix-env -q
 
-
-cd /etc/nixos
-sudo micro configuration.nix
-
 flatpak remotes
 
 sudo nix-channel --list
+sudo nix-channel --update
 
+cd /etc/nixos
+sudo micro configuration.nix
 sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +3 && sudo nix-collect-garbage
 sudo nixos-rebuild switch
 
