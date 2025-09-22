@@ -25,8 +25,12 @@ sudo nix-channel --update
 
 cd /etc/nixos
 sudo micro configuration.nix
-sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +3 && sudo nix-collect-garbage
+sudo micro hardware-configuration.nix
+sudo micro flake.nix
+sudo micro flake.lock
 sudo nixos-rebuild switch
+sudo nixos-rebuild switch --flake /etc/nixos#nixos
+sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +3 && sudo nix-collect-garbage
 
 
 cd accesorios_programacion
@@ -57,3 +61,6 @@ $ZULU21_HOME/bin/java -version (JDK 21)
 echo $ZULU21_HOME
 $ZULU24_HOME/bin/java -version (JDK 24)
 echo $ZULU24_HOME
+
+nix develop ~/accesorios_programacion/entorno_python
+nix develop ~/accesorios_programacion/entorno_python#legacy

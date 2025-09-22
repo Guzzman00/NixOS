@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <nixos-hardware/lenovo/thinkpad/t430>
     ];
     
   # Bootloader.
@@ -110,7 +109,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -165,14 +164,15 @@
      pkgs.eza         
      pkgs.bat
      pkgs.meld
-     pkgs.micro         
-     pkgs.xpad
-     pkgs.ark
+     pkgs.micro     
+     pkgs.xclip
+     pkgs.wl-clipboard    
+     pkgs.kdePackages.ark
      pkgs.qpdfview
      pkgs.google-chrome
      pkgs.thunderbird
      pkgs.discord
-     pkgs.gnome.gnome-boxes
+     pkgs.gnome-boxes
      pkgs.jetbrains-toolbox
      pkgs.onlyoffice-bin
      pkgs.git
@@ -186,7 +186,7 @@
      pkgs.libstrangle
      pkgs.intel-gpu-tools
      pkgs.intel-vaapi-driver
-     pkgs.mesa.drivers
+     pkgs.mesa
      pkgs.podman
      #vim #The Micro editor is also installed by default.
   ];
