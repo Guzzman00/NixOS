@@ -162,7 +162,10 @@
      pkgs.btop
      pkgs.wget
      pkgs.corefonts
-     pkgs.micro
+     pkgs.eza         
+     pkgs.bat
+     pkgs.meld
+     pkgs.micro         
      pkgs.xpad
      pkgs.ark
      pkgs.qpdfview
