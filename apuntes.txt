@@ -35,6 +35,7 @@ diff /etc/nixos/flake.lock /home/guzmen/Desktop/nixos/flake.lock
 sudo nixos-rebuild switch
 sudo nixos-rebuild switch --flake /etc/nixos#nixos
 sudo nix-env -p /nix/var/nix/profiles/system --delete-generations 3 && sudo nix-collect-garbage
+sudo nix-env --list-generations -p /nix/var/nix/profiles/system
 
 
 cd accesorios_programacion
