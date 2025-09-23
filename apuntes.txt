@@ -75,7 +75,7 @@ nix develop ~/accesorios_programacion --extra-experimental-features "nix-command
 python --version (Python 3.11.5)
 echo $PYTHON3_11_5_HOME
 python3.8 --version (Python 3.8.10)
-echo $PYTHON3_8_10_HOME
+echo $PYTHON3_8_HOME
 python3.11 --version (Python 3.11.2)
 echo $PYTHON3_11_2_HOME
 
