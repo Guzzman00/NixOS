@@ -1,0 +1,27 @@
+Versiones con Soporte Oficial ✅:
+
+Versión Unstable (25.11 "Xantusia" en desarrollo continuo):
+https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-unstable.tar.gz
+
+Versión 24.05 "Uakari":
+https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-24.05.tar.gz
+
+Versión 23.11 "Tapir":
+https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-23.11.tar.gz
+
+Versiones Archivadas (Sin Soporte Oficial) EOL 🪦:
+
+Versión 23.05 "Stoat":
+https://github.com/NixOS/nixpkgs/archive/refs/heads/release-23.05.tar.gz
+
+Versión 22.11 "Raccoon":
+https://github.com/NixOS/nixpkgs/archive/refs/heads/release-22.11.tar.gz
+
+Versión 22.05 "Quokka":
+https://github.com/NixOS/nixpkgs/archive/refs/heads/release-22.05.tar.gz
+
+Versión 21.11 "Porcupine":
+https://github.com/NixOS/nixpkgs/archive/refs/heads/release-21.11.tar.gz
+
+Versión 21.05 "Okapi":
+https://github.com/NixOS/nixpkgs/archive/refs/heads/release-21.05.tar.gz
