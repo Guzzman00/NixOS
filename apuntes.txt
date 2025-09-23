@@ -62,5 +62,5 @@ echo $ZULU21_HOME
 $ZULU24_HOME/bin/java -version (JDK 24)
 echo $ZULU24_HOME
 
-nix develop ~/accesorios_programacion/entorno_python
-nix develop ~/accesorios_programacion/entorno_python#legacy
+nix develop ~/accesorios_programacion --extra-experimental-features "nix-command flakes"
+nix develop ~/accesorios_programacion#legacy --extra-experimental-features "nix-command flakes"
