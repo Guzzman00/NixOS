@@ -1,10 +1,9 @@
 # flake.nix
 
 {
-  description = "Entornos de desarrollo con versiones de Python fijadas (pinned)";
+  description = "Entornos de desarrollo con versiones de Python";
 
   inputs = {
-    # La entrada principal de paquetes, análoga al primer 'pkgs' de tu shell.nix
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
@@ -12,10 +11,7 @@
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
 
-    # --- Definición de Paquetes de Python Personalizados ---
-    # Este bloque es el equivalente a las definiciones 'pin' en tu shell.nix.
-    # Aquí fijamos cada versión de Python que necesitamos.
-
+    # Pin para Python 3.8.10
     python3_8_10 = pkgs.python38.override {
       version = "3.8.10";
       src = pkgs.fetchurl {
@@ -24,6 +20,7 @@
       };
     };
 
+    # Pin para Python 3.11.2
     python3_11_2 = pkgs.python311.override {
       version = "3.11.2";
       src = pkgs.fetchurl {
@@ -32,6 +29,7 @@
       };
     };
 
+    # Pin para Python 3.11.5
     python3_11_5 = pkgs.python311.override {
       version = "3.11.5";
       src = pkgs.fetchurl {
@@ -40,6 +38,7 @@
       };
     };
 
+    # Pin para Python 3.10.9
     python3_10_9 = pkgs.python310.override {
       version = "3.10.9";
       src = pkgs.fetchurl {
@@ -47,36 +46,37 @@
         hash = "sha256-T2E0ba2kIZbDh3N2KKof2+a8wA+3t6r2yDUs7u/zU2A=";
       };
     };
-
+    
   in {
-    # La estructura de devShells es la forma estándar en Flakes
-    # de definir múltiples entornos.
     devShells.${system} = {
 
-      # --- ENTORNO BASE / POR DEFECTO ---
-      # Equivalente al "bloque 0" de tu shell.nix
+      # El bloque 0 define el entorno por defecto
       default = pkgs.mkShell {
         buildInputs = [
-          # Usamos los paquetes personalizados que definimos arriba
           python3_8_10
           python3_11_2
           python3_11_5
         ];
         shellHook = ''
-          echo "✅ Entorno Python Base Cargado."
-          echo "   Versiones disponibles: 3.8.10, 3.11.2, 3.11.5"
-          echo "   Usa python3.8 y python3.11 para acceder a ellas."
+          echo "--- Entorno-Base Activado ---"
+          export PYTHON3_8_HOME=${python3_8_10}
+          export PYTHON3_11_2_HOME=${python3_11_2}
+          export PYTHON3_11_5_HOME=${python3_11_5}
+          export PYTHON_HOME=${python3_11_5}
+          export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PYTHON_HOME/bin:$PATH"
         '';
       };
 
-      # --- ENTORNO APARTE / LEGACY ---
-      # Equivalente al "entorno-1" de tu shell.nix
+      # El bloque 1 define el entorno legacy
       legacy = pkgs.mkShell {
         buildInputs = [
           python3_10_9
         ];
         shellHook = ''
-          echo "✅ Entorno Python Legacy (3.10.9) Cargado."
+          echo "--- Entorno-1 Activado ---"
+          export PYTHON3_10_9_HOME=${python3_10_9}
+          export PYTHON_HOME=${python3_10_9}
+          export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PYTHON_HOME/bin:$PATH"
         '';
       };
     };
