@@ -4,7 +4,7 @@
   description = "Entornos de desarrollo con versiones de Python";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-23.11.tar.gz";
   };
 
   outputs = { self, nixpkgs }: let
@@ -12,40 +12,40 @@
     pkgs = nixpkgs.legacyPackages.${system};
 
     # Pin para Python 3.8.10
-    python3_8_10 = pkgs.python38.override {
+    python3_8_10 = pkgs.python38.overrideAttrs (oldAttrs: {
       version = "3.8.10";
       src = pkgs.fetchurl {
         url = "https://www.python.org/ftp/python/3.8.10/Python-3.8.10.tgz";
-        hash = "sha256-yhb720182D+5dMvlxT4/CS232zms2pCr3sQ3kYlFq2M=";
+        hash = "sha256-s3rHTSy60lkOfNDdKzgmwpr+iac0CQqHv4wDxFBmy2U=";
       };
-    };
+    }); 
 
     # Pin para Python 3.11.2
-    python3_11_2 = pkgs.python311.override {
+    python3_11_2 = pkgs.python311.overrideAttrs (oldAttrs: { 
       version = "3.11.2";
       src = pkgs.fetchurl {
         url = "https://www.python.org/ftp/python/3.11.2/Python-3.11.2.tgz";
-        hash = "sha256-u6yV+k1bs0GWPSaIys2W0U5QYj9f2jpxs1wgfH+sE1w=";
+        hash = "sha256-JBHHS9pbvPzdr0Ux9m0a3HPyR/UprumBsClROu/b+Ek=";
       };
-    };
-
+    });
+    
     # Pin para Python 3.11.5
-    python3_11_5 = pkgs.python311.override {
+    python3_11_5 = pkgs.python311.overrideAttrs (oldAttrs: {
       version = "3.11.5";
       src = pkgs.fetchurl {
         url = "https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz";
-        hash = "sha256-4OqjYFGlXH22aOksjOK3CSZ6UcN+dC/j227zx0JjYek=";
+        hash = "sha256-oSoKATowuEbHhsAQ8sGd02tymNiI98S9FYHZDOGLXlg=";
       };
-    };
+    });
 
     # Pin para Python 3.10.9
-    python3_10_9 = pkgs.python310.override {
+    python3_10_9 = pkgs.python310.overrideAttrs (oldAttrs: {
       version = "3.10.9";
       src = pkgs.fetchurl {
         url = "https://www.python.org/ftp/python/3.10.9/Python-3.10.9.tgz";
-        hash = "sha256-T2E0ba2kIZbDh3N2KKof2+a8wA+3t6r2yDUs7u/zU2A=";
+        hash = "sha256-TM1+RsiJj0x4YpEKFwOqDmNSWROlGauy9V4mIgqRTYg=";
       };
-    };
+    });
     
   in {
     devShells.${system} = {
@@ -58,7 +58,7 @@
           python3_11_5
         ];
         shellHook = ''
-          echo "--- Entorno-Base Activado ---"
+          echo "--- Entorno-Por-Defecto Activado ---"
           export PYTHON3_8_HOME=${python3_8_10}
           export PYTHON3_11_2_HOME=${python3_11_2}
           export PYTHON3_11_5_HOME=${python3_11_5}
@@ -73,7 +73,7 @@
           python3_10_9
         ];
         shellHook = ''
-          echo "--- Entorno-1 Activado ---"
+          echo "--- Entorno-Legacy Activado ---"
           export PYTHON3_10_9_HOME=${python3_10_9}
           export PYTHON_HOME=${python3_10_9}
           export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PYTHON_HOME/bin:$PATH"

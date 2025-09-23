@@ -25,9 +25,13 @@ sudo nix-channel --update
 
 cd /etc/nixos
 sudo micro configuration.nix
+diff /etc/nixos/configuration.nix /home/guzmen/Desktop/nixos/configuration.nix
 sudo micro hardware-configuration.nix
+#####################################
 sudo micro flake.nix
+diff /etc/nixos/flake.nix /home/guzmen/Desktop/nixos/flake.nix
 sudo micro flake.lock
+diff /etc/nixos/flake.lock /home/guzmen/Desktop/nixos/flake.lock
 sudo nixos-rebuild switch
 sudo nixos-rebuild switch --flake /etc/nixos#nixos
 sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +3 && sudo nix-collect-garbage
@@ -35,6 +39,11 @@ sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +3 && sudo nix
 
 cd accesorios_programacion
 sudo micro shell.nix
+diff /home/guzmen/accesorios_programacion/shell.nix /home/guzmen/Desktop/nixos/accesorios_programacion/shell.nix
+sudo micro flake.nix
+diff /home/guzmen/accesorios_programacion/flake.nix /home/guzmen/Desktop/nixos/accesorios_programacion/flake.nix
+sudo micro flake.lock
+diff /home/guzmen/accesorios_programacion/flake.lock /home/guzmen/Desktop/nixos/accesorios_programacion/flake.lock
 
 nix-shell
 java --version (JDK 17)
@@ -63,4 +72,13 @@ $ZULU24_HOME/bin/java -version (JDK 24)
 echo $ZULU24_HOME
 
 nix develop ~/accesorios_programacion --extra-experimental-features "nix-command flakes"
+python --version (Python 3.11.5)
+echo $PYTHON3_11_5_HOME
+python3.8 --version (Python 3.8.10)
+echo $PYTHON3_8_10_HOME
+python3.11 --version (Python 3.11.2)
+echo $PYTHON3_11_2_HOME
+
 nix develop ~/accesorios_programacion#legacy --extra-experimental-features "nix-command flakes"
+python --version (Python 3.10.9)
+echo $PYTHON3_10_9_HOME
