@@ -6,6 +6,9 @@ variables de entorno para hacer un nuevo proyecto en RustRover:
 variable:RUSTFLAGS
 valor:-C linker=/nix/store/rdc1jnyw74mwr2gszqc5zwi433zxs089-gcc-wrapper-13.2.0/bin/cc
 
+variables de entorno para hacer un nuevo proyecto en PyCharm:
+Python version:link de Python en nixstore + bin + python3
+
 en Steam para lanzar juegos:
 administrar>
 propiedades>
