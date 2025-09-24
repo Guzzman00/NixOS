@@ -75,11 +75,15 @@ echo $ZULU24_HOME
 nix develop ~/accesorios_programacion --extra-experimental-features "nix-command flakes"
 python --version (Python 3.11.5)
 echo $PYTHON3_11_5_HOME
+/nix/store/krfgikxryfmgrsqcx9qkq6z2dfvfxm17-python3-3.11.5
 python3.8 --version (Python 3.8.10)
 echo $PYTHON3_8_HOME
+/nix/store/1p3m38sb5dk3x5zlsr931pjdnfb7d5zz-python3-3.8.10
 python3.11 --version (Python 3.11.2)
 echo $PYTHON3_11_2_HOME
+/nix/store/drww1389d2llzzq7pcp54911w3dv6rqa-python3-3.11.2
 
 nix develop ~/accesorios_programacion#legacy --extra-experimental-features "nix-command flakes"
 python --version (Python 3.10.9)
 echo $PYTHON3_10_9_HOME
+/nix/store/cy9p06m6cdk4cinfxi36aw0w0b6ryav2-python3-3.10.9
