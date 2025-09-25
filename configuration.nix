@@ -140,6 +140,9 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Install Google Chrome.
+  programs.google-chrome.enable = true;
+
   # Install Steam.
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
@@ -169,7 +172,6 @@
      pkgs.wl-clipboard    
      pkgs.kdePackages.ark
      pkgs.qpdfview
-     pkgs.google-chrome
      pkgs.thunderbird
      pkgs.discord
      pkgs.gnome-boxes
