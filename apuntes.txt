@@ -46,7 +46,7 @@ diff /home/guzmen/accesorios_programacion/flake.nix /home/guzmen/Desktop/nixos/a
 sudo micro flake.lock
 diff /home/guzmen/accesorios_programacion/flake.lock /home/guzmen/Desktop/nixos/accesorios_programacion/flake.lock
 
-nix-shell
+nix-shell --extra-experimental-features "nix-command flakes"
 java --version (JDK 17)
 echo $ZULU17_HOME
 scala --version (2.13.8)
@@ -58,7 +58,7 @@ echo $NODE_HOME
 deno --version (2.2.3)
 echo $DENO_HOME
 
-nix-shell -A entorno-1
+nix-shell -A entorno-1 --extra-experimental-features "nix-command flakes"
 java --version (JRE 15)
 echo $JDK15_HOME
 $TEMURIN8_HOME/bin/java -version (JDK 8)
